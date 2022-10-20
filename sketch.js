@@ -1,7 +1,11 @@
 //let mic;
+let osc;
+let osc2;
+let osc3;
+
 
 function setup() {
-  createCanvas(800, 800);  
+  createCanvas(800, 800);
   canvas.parent('sketch-container');
 
   osc = new p5.Oscillator();
@@ -9,14 +13,14 @@ function setup() {
   osc.freq(220);
   osc.amp(0.5);
   osc.start();
-  
-  
+
+
   osc2 = new p5.Oscillator();
   osc2.setType('sawtooth');
   osc2.freq(220);
   osc2.amp(0.5);
   osc2.start();
-  
+
   osc3 = new p5.Oscillator();
   osc3.setType('triangle');
   osc3.freq(220);
@@ -27,17 +31,17 @@ function setup() {
 function draw() {
   fill(0, 10);
   rect(0, 0, width, height);
-  
+
   osc.freq(map(mouseX, 0, width, 80, 1000));
   osc.amp(map(mouseY, 0, height, 0.1, 1));
-  
+
   osc2.freq(map(mouseY, 0, width, 80, 1000));
   osc2.amp(map(mouseX, 0, height, 0.1, 1));
-  
+
   osc3.freq(map(-mouseX, 0, width, 80, 1000));
   osc3.amp(map(mouseY, 0, height, 0.1, 0));
 
-  
+
   var radius = height * 0.4;
   var i = cos(radians(-mouseX)) * radius;
   var j = sin(radians(-mouseY)) * radius;
