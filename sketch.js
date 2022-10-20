@@ -6,7 +6,7 @@ let osc3;
 
 function setup() {
   createCanvas(800, 800);
-  canvas.parent('sketch-container');
+  //canvas.parent('sketch-container');
 
   osc = new p5.Oscillator();
   osc.setType('sine');
