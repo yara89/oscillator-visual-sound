@@ -1,5 +1,6 @@
 //let mic;
 let osc;
+let button;
 let osc2;
 let osc3;
 
@@ -7,6 +8,10 @@ let osc3;
 function setup() {
   createCanvas(800, 800);
   //canvas.parent('sketch-container');
+
+  button = createButton('click me');
+  button.position(0, 0);
+  button.mousePressed(changeBG);
 
   osc = new p5.Oscillator();
   osc.setType('sine');
@@ -31,7 +36,9 @@ function setup() {
 function draw() {
   fill(0, 10);
   rect(0, 0, width, height);
-
+  button = createButton('click me');
+  button.position(0, 0);
+  button.mousePressed(changeBG);
   osc.freq(map(mouseX, 0, width, 80, 1000));
   osc.amp(map(mouseY, 0, height, 0.1, 1));
 
@@ -57,4 +64,10 @@ function draw() {
     ellipse(j + 150, 30, m+ 30, mouseY);
     rotate(PI / 8);
   }
+
+  function changeBG() {
+  let val = random(255);
+  background(val);
+}
+
 }
