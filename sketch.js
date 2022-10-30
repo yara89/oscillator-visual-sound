@@ -6,13 +6,11 @@ let osc3;
 
 
 function setup() {
+  h1 = createElement("h1","This is an experiment...move your mouse curser around the canvas!");
+  //h1. parent('h1');
   createCanvas(800, 800);
   //canvas.parent('sketch-container');
-
-  button = createButton('click me');
-  button.position(0, 0);
-  button.mousePressed(changeBG);
-
+\
   osc = new p5.Oscillator();
   osc.setType('sine');
   osc.freq(220);
