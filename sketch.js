@@ -1,16 +1,14 @@
-//let mic;
 let osc;
-let button;
+//let button;
 let osc2;
 let osc3;
-let sketchStarted = false;
-
+//let sketchStarted = false;
+var started;
 
 function setup() {
-  //h1 = createElement("h1","This is an experiment...move your mouse curser around the canvas!");
-  //h1. parent('h1');
-  button = createButton("Start");
-  button.mousePressed(() => sketchStarted = true);
+
+ /* button = createButton("Start");
+  button.mousePressed(() => sketchStarted = true);*/
 
   var canvas = createCanvas(800, 800);
   canvas.parent('sketch-container');
@@ -36,10 +34,12 @@ function setup() {
 }
 
 function draw() {
-  if (gameStarted) {
+
+  if(started) {
+  //if (gameStarted) {
   fill(0, 10);
   rect(0, 0, width, height);
-}
+
 
   osc.freq(map(mouseX, 0, width, 80, 1000));
   osc.amp(map(mouseY, 0, height, 0.1, 1));
@@ -66,6 +66,12 @@ function draw() {
     ellipse(j + 150, 30, m+ 30, mouseY);
     rotate(PI / 8);
   }
-
 }
+}
+
+
+//Start or Stop the animation
+document.querySelector("button").addEventListener("click", function () {
+  started = !started;
+})
 
