@@ -14,8 +14,6 @@ function setup() {
 
   var canvas = createCanvas(800, 800);
   canvas.parent('sketch-container');
-  background(255, 0, 200);
-
 
   osc = new p5.Oscillator();
   osc.setType('sine');
