@@ -39,7 +39,7 @@ function draw() {
   //if (gameStarted) {
   fill(0, 10);
   rect(0, 0, width, height);
-
+}
 
   osc.freq(map(mouseX, 0, width, 80, 1000));
   osc.amp(map(mouseY, 0, height, 0.1, 1));
@@ -67,7 +67,7 @@ function draw() {
     rotate(PI / 8);
   }
 }
-}
+
 
 
 //Start or Stop the animation
