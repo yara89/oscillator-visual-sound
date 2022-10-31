@@ -6,11 +6,12 @@ let osc3;
 
 
 function setup() {
-  h1 = createElement("h1","This is an experiment...move your mouse curser around the canvas!");
+  //h1 = createElement("h1","This is an experiment...move your mouse curser around the canvas!");
   //h1. parent('h1');
   createCanvas(800, 800);
-  //canvas.parent('sketch-container');
-\
+  canvas.parent('sketch-container');
+
+
   osc = new p5.Oscillator();
   osc.setType('sine');
   osc.freq(220);
@@ -34,9 +35,7 @@ function setup() {
 function draw() {
   fill(0, 10);
   rect(0, 0, width, height);
-  button = createButton('click me');
-  button.position(0, 0);
-  button.mousePressed(changeBG);
+
   osc.freq(map(mouseX, 0, width, 80, 1000));
   osc.amp(map(mouseY, 0, height, 0.1, 1));
 
@@ -63,9 +62,5 @@ function draw() {
     rotate(PI / 8);
   }
 
-  function changeBG() {
-  let val = random(255);
-  background(val);
-}
 
 }
