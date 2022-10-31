@@ -3,11 +3,15 @@ let osc;
 let button;
 let osc2;
 let osc3;
+let sketchStarted = false;
 
 
 function setup() {
   //h1 = createElement("h1","This is an experiment...move your mouse curser around the canvas!");
   //h1. parent('h1');
+  button = createButton("Start");
+  button.mousePressed(() => sketchStarted = true);
+
   var canvas = createCanvas(800, 800);
   canvas.parent('sketch-container');
   background(255, 0, 200);
@@ -34,6 +38,7 @@ function setup() {
 }
 
 function draw() {
+  if (gameStarted) {
   fill(0, 10);
   rect(0, 0, width, height);
 
@@ -63,5 +68,5 @@ function draw() {
     rotate(PI / 8);
   }
 
-
+}
 }
