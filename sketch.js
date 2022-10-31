@@ -8,8 +8,9 @@ let osc3;
 function setup() {
   //h1 = createElement("h1","This is an experiment...move your mouse curser around the canvas!");
   //h1. parent('h1');
-  createCanvas(800, 800);
+  var canvas = createCanvas(800, 800);
   canvas.parent('sketch-container');
+  background(255, 0, 200);
 
 
   osc = new p5.Oscillator();
