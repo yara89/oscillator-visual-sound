@@ -35,12 +35,10 @@ function setup() {
 
 function draw() {
 
-
   fill(0, 10);
   rect(0, 0, width, height);
   background(220);
 
-if(started) {
   osc.freq(map(mouseX, 0, width, 80, 1000));
   osc.amp(map(mouseY, 0, height, 0.1, 1));
 
@@ -50,7 +48,7 @@ if(started) {
   osc3.freq(map(-mouseX, 0, width, 80, 1000));
   osc3.amp(map(mouseY, 0, height, 0.1, 0));
 
-}
+
   var radius = height * 0.4;
   var i = cos(radians(-mouseX)) * radius;
   var j = sin(radians(-mouseY)) * radius;
@@ -58,7 +56,6 @@ if(started) {
   var m = cos(radians(mouseX)) * radius;
   var n = sin(radians(mouseY)) * radius;
 
-if(started) {
 
   translate(width /2, width / 2, 250);
   stroke(random(0, 255), random(0, 255), random(0, 255));
@@ -69,10 +66,6 @@ if(started) {
   }
 }
 
-
-
-//Start or Stop the animation
-document.querySelector("button").addEventListener("click", function () {
-  started = !started;
-})
-
+function touchStarted() {
+  getAudioContext().resume();
+}
