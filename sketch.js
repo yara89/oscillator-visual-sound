@@ -12,6 +12,7 @@ function setup() {
 
   var canvas = createCanvas(800, 800);
   canvas.parent('sketch-container');
+  canvas.background(0);
 
   osc = new p5.Oscillator();
   osc.setType('sine');
@@ -36,9 +37,9 @@ function setup() {
 function draw() {
 
   if(started) {
-  //if (gameStarted) {
   fill(0, 10);
   rect(0, 0, width, height);
+
 }
 
   osc.freq(map(mouseX, 0, width, 80, 1000));
