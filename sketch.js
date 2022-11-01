@@ -68,7 +68,6 @@ if(started) {
     rotate(PI / 8);
   }
 }
-}
 
 
 
